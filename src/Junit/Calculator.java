@@ -5,24 +5,31 @@ public class Calculator {
 	 * JUNIT Este metodo de dado una ip y una mascara devuelve la clase de direccion
 	 * ip a la que pertenece
 	 */
-	public static String ipAdressType(String ip, String mask) {
+
+	public static void main(String[] args) {
+		String tipo = ipAdressType("10.0.100.23", "255.0.0.0");
+		double area = getArea(6, 8, 10);
+		String triangulo = triangle(3, 4, 5);
+	}
+
+	public static String ipAdressType(String ip, String mascara) {
 		String tipo = null;
 		if (ip == "10.0.100.23") {
-			if (mask == "255.0.0.0" || mask == "" || mask == null) {
+			if (mascara == "255.0.0.0" || mascara == "" || mascara == null) {
 				tipo = "a";
-			} else if (mask == "255.255.0.0") {
+			} else if (mascara == "255.255.0.0") {
 				tipo = "b";
 			}
 		}
 
 		if (ip == "200.30.110.5") {
-			if (mask == "255.255.255.0" || mask == "" || mask == null) {
+			if (mascara == "255.255.255.0" || mascara == "" || mascara == null) {
 				tipo = "c";
 			}
 		}
 
 		if (ip == "200.30.110.5/24") {
-			if (mask == "") {
+			if (mascara == "") {
 				tipo = "c";
 			}
 		}
