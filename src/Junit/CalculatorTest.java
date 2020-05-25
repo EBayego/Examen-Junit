@@ -47,6 +47,15 @@ public class CalculatorTest {
 	@Test
 	public void triangleTest() {
 		assertEquals("Right Triangle", triangle(3, 4, 5));
-		assertEquals("Right Triangle", triangle(3, 2, 3));
+		assertEquals("Blunt Triangle", triangle(3, 4, 12));
+		assertEquals("Triangular Taper", triangle(6, 7, 8));
+		assertThrows(RuntimeException.class, () -> {
+			triangle(0, 0, 0);
+		});
+		assertThrows(RuntimeException.class, () -> {
+			triangle(-6, -7, -8);
+		});
+		assertEquals("Triangular Taper", triangle(-10, -8, -6));
+		assertEquals("Triangular Taper", triangle(-5, -4, -3));
 	}
 }
